@@ -1,0 +1,29 @@
+create db schema
+    customers
+        customer_id
+        first_name
+        last_name
+        email
+        age
+        sex
+    invoices
+        invoice_id
+        file_path
+        type
+        read
+        time_read
+     users
+        user_id
+        role_id
+        customer_id
+        username
+        password
+     roles
+        role_id
+        role_description
+
+
+
+
+
+
