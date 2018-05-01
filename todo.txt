@@ -21,6 +21,48 @@ create db schema
      roles
         role_id
         role_description
+=============
+microservices - endpoints
+    dashboard
+        admin:
+            get:    users/admin/login
+            get:    users/admin/logout
+            post:   users/admin/create
+            put:    users/admin/update/{userId}
+            delete: users/admin/delete{userId}
+
+            post:   invoices/admin/{customerId}/
+            delete: invoices/admin/{customer}/{invoiceId}
+
+            post:   customers/admin/newcustomer
+            delete: customers/admin/{customerId}
+            put:    customers/admin/{customerId}
+        user:
+            get:    users/login
+            get:    users/logout
+            post:   users/create
+            put:    users/update
+            delete: users/delete
+
+            get:    invoices/{customerId}
+            get:    invoices/{customerId}/?page={pageNum}
+            get:    invoices/{customerId}/?from={from}&to={to}&page={pageNum}
+            get:    invoices/{customerId}/?unread=true
+            get:    invoices/{customerId}/new
+
+            
+           email:
+                //instead of rest, use message broker!!!
+                post:   email/sendTo/{customerId}/ @RequestBody = {invoice}
+                post:   email/sendToAll/    @RequestBody = {listOfCustomersWithTheirInvoices}
+    invoices
+        db
+    customers
+        db
+    users
+        db
+    email-sender
+        db
 
 
 
