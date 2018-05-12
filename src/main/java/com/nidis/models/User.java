@@ -1,4 +1,5 @@
-package com.nidis.model;
+/*
+package com.nidis.models;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,3 +31,4 @@ public class User {
     @Column(name = "password")
     private String password;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.nidis.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -16,31 +17,31 @@ import java.util.Properties;
 public class DatabaseConfig {
 
     @Value("${db.driver}")
-    private String DB_DRIVER;
+    public String DB_DRIVER;
 
     @Value("${db.password}")
-    private String DB_PASSWORD;
+    public String DB_PASSWORD;
 
     @Value("${db.url}")
-    private String DB_URL;
+    public String DB_URL;
 
     @Value("${db.username}")
-    private String DB_USERNAME;
+    public String DB_USERNAME;
 
     @Value("${hibernate.dialect}")
-    private String HIBERNATE_DIALECT;
+    public String HIBERNATE_DIALECT;
 
     @Value("${hibernate.show_sql}")
-    private String HIBERNATE_SHOW_SQL;
+    public String HIBERNATE_SHOW_SQL;
 
     @Value("${hibernate.hbm2ddl.auto}")
-    private String HIBERNATE_HBM2DDL_AUTO;
+    public String HIBERNATE_HBM2DDL_AUTO;
 
     @Value("${entitymanager.packagesToScan}")
-    private String ENTITYMANAGER_PACKAGES_TO_SCAN;
+    public String ENTITYMANAGER_PACKAGES_TO_SCAN;
 
     @Bean
-    private DataSource dataSource() {
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(DB_DRIVER);
         dataSource.setUrl(DB_URL);
@@ -50,7 +51,7 @@ public class DatabaseConfig {
     }
 
     @Bean
-    private LocalSessionFactoryBean sessionFactory() {
+    public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
         sessionFactoryBean.setPackagesToScan(ENTITYMANAGER_PACKAGES_TO_SCAN);
@@ -64,10 +65,11 @@ public class DatabaseConfig {
     }
 
     @Bean
-    private HibernateTransactionManager transactionManager() {
+    public HibernateTransactionManager transactionManager() {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
     }
 
 }
+*/
