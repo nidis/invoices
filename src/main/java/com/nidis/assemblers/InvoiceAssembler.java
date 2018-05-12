@@ -7,14 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityLinks;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.RelProvider;
-import org.springframework.hateoas.ResourceSupport;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
-@Service
+@Component
 public class InvoiceAssembler extends EmbeddableResourceAssemblerSupport<Invoice, InvoiceResource, InvoiceController> {
 
     @Autowired

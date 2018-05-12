@@ -23,8 +23,8 @@ public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
             nativeQuery = true)*/
     Invoice findByInvoiceId(/*@Param(value = "invoiceId")*/ Long invoiceId);
 
-    @Query("select invoiceId from invoices where customerId = :customerId")
-    Page<Invoice> findInvoicesByCustomerId(@Param(value = "customerId") Long customerId, Pageable pageRequest);
+    //@Query("select invoiceId from invoices where customerId = :customerId")
+    Page<Invoice> findByCustomerId(@Param(value = "customerId") Long customerId, Pageable pageRequest);
 
   /*  Page<Invoice> findByDateRange(Integer customerId, Integer from, Integer to, Pageable pageRequest);
 

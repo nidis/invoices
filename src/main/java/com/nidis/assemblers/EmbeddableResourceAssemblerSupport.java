@@ -46,7 +46,7 @@ public abstract class EmbeddableResourceAssemblerSupport<T, D extends ResourceSu
       final D resource = toResource(entity);
       return wrapper.wrap(resource);
    }
-  
+
    /**
     * Create an empty main object wrapping a list of resources.
     * This is the way HAL expects endpoint returning a collection works
@@ -55,6 +55,6 @@ public abstract class EmbeddableResourceAssemblerSupport<T, D extends ResourceSu
       final List<D> resources = toResources(entities);
       return new Resources<>(resources, linkTo(controllerClass).withSelfRel()); // Add self link to list endpoint
    }
-   
+
    public abstract Link linkToSingleResource(T entity);
 }
