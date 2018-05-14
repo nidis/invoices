@@ -49,7 +49,7 @@ public class InvoiceAssembler extends EmbeddableResourceAssemblerSupport<Invoice
     }
 
     private void addActionLinks(final InvoiceResource resource, final Invoice entity) {
-        final Link invoiceLink = linkTo(methodOn(controllerClass).findInvoice(entity.getInvoiceId(), 1, 20)).withRel("invoice");
+        final Link invoiceLink = linkTo(methodOn(controllerClass).findInvoice(entity.getInvoiceId())).withRel("invoice");
         resource.add(invoiceLink);
     }
 }
