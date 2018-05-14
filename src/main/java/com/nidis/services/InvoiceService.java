@@ -23,7 +23,7 @@ public class InvoiceService {
         return invoiceRepository.findAll();
     }
 
-    public Invoice findInvoice(Long invoiceId, int page, int size) {
+    public Invoice findInvoice(Long invoiceId) {
         return invoiceRepository.findByInvoiceId(invoiceId);
     }
 
