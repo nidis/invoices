@@ -8,7 +8,7 @@ create db schema
         sex
     invoices
         invoice_id
-        file_path
+        file_name
         type
         read
         time_read
@@ -63,6 +63,47 @@ microservices - endpoints
         db
     email-sender
         db
+-------
+e-shop
+-------
+product
+    id
+    description
+    price
+customer
+    id
+    first_name
+    surname
+    email
+    phone
+    address_id
+address
+    id
+    shipping_street
+    shipping_city
+    shipping_postcode
+    billing_street
+    billing_city
+    billing_postcode
+cart
+    id
+    customer_id
+    status
+cart_item
+    id
+    cart_id
+    product_id
+    quantity
+delivery
+    id
+    method
+order
+    id
+    cart_id
+    customer_id
+    timestamp
+    delivery_id
+    status
 
 
 

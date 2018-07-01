@@ -3,6 +3,7 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -16,6 +17,7 @@ import static org.springframework.hateoas.config.EnableHypermediaSupport.Hyperme
 @EnableJpaRepositories(basePackages = "com.nidis.repositories")
 @EntityScan(basePackages = "com.nidis.models")
 @EnableHypermediaSupport(type = HAL)
+@EnableDiscoveryClient
 public class Application {
 
 	public static void main(String[] args) {

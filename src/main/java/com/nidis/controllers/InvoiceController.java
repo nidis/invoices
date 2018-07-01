@@ -68,6 +68,14 @@ public class InvoiceController {
         return ResponseEntity.ok(wrapped);
     }
 
+
+    @PostMapping(value = "/customer/{customerId}")
+    public ResponseEntity<Resources<InvoiceResource>> createInvoice(@PathVariable Long customerId, @RequestBody Invoice invoice) {
+
+        return null;
+    }
+
+
     private byte[] convertToBytes(String dir) throws IOException {
         Path path = Paths.get(dir);
 
